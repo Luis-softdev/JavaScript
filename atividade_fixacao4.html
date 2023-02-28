@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Atividade</title>
+</head>
+<script>
+
+    var objetos = Array('Cadeira', 'Impressora', 'Garfo')
+
+    function adicionar() {
+        var valorInput = document.getElementById('entrada').value.trim();
+
+        if (valorInput === '') {
+            alert('Informe um valor válido!');
+        } else if (objetos.includes(valorInput)) {
+            alert('Objeto já foi adicionado');
+        } else {
+            objetos.push(valorInput);
+            console.log(objetos);
+            document.getElementById('entrada').value = '';
+        }
+    }
+
+    function ordenar() {
+        objetos.sort();
+        console.log(objetos);
+    }
+
+    document.getElementById('click').addEventListener('click', adicionar);
+    document.getElementById('click2').addEventListener('click', ordenar);
+
+</script>
+
+
+<body>
+
+    <input type="text" placeholder="Digite aqui..." id="entrada" />
+
+    <button onclick="adicionar()" type="button" id="click"> Adicionar </button>
+    <button onclick="ordenar()" id="click2" type="button"> Ordenar </button>
+
+
+
+</body>
+
+
+</html>
